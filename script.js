@@ -292,7 +292,7 @@ document.querySelectorAll('.play-button').forEach(button => {
         // Add your video play logic here
         alert('Video player would open here');
     });
-     });
+});
 
     // Impact Modal Functionality
 document.addEventListener('DOMContentLoaded', function() {
