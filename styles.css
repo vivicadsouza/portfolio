@@ -225,6 +225,8 @@ html {
     gap: 1rem;
     margin-bottom: 3rem;
     flex-wrap: wrap;
+    position: relative; /* ADD THIS */
+    z-index: 10; /* ADD THIS - higher than projects */
 }
 
 .tab {
@@ -247,6 +249,8 @@ html {
     flex-direction: column;
     gap: 3rem;
     margin-bottom: 4rem;
+    position: relative; /* ADD THIS */
+    z-index: 1; /* ADD THIS - lower than tabs */
 }
 
 .project-card {
