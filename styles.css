@@ -844,6 +844,31 @@ footer {
     .projects-grid {
         grid-template-columns: 1fr;
     }
+/* ADD THESE NEW MOBILE STYLES */
+    /* Stack project cards vertically on mobile */
+    .project-card {
+        grid-template-columns: 1fr !important;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .project-image {
+        min-height: 250px;
+        width: 100%;
+    }
+
+    .project-info {
+        width: 100%;
+    }
+
+    /* Remove right-align on mobile */
+    .project-card.right-align {
+        direction: ltr;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
 
     /* Hide sidebar on mobile, show bottom menu instead */
     .sidebar-nav {
@@ -858,7 +883,7 @@ footer {
         padding-bottom: 80px;
     }
 }
-
+    
 @media (max-width: 480px) {
     .hero h1 {
         font-size: 1.5rem;
