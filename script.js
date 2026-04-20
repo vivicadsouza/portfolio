@@ -215,20 +215,21 @@ projects.forEach(project => {
 // Mobile Menu Bottom Navigation
 const mobileMenuItems = document.querySelectorAll('.menu-item');
 
-mobileMenuItems.forEach((item, index) => {
+mobileMenuItems.forEach((item) => {
     item.addEventListener('click', () => {
-        const categories = ['web', 'video', 'audio'];
+        const category = item.getAttribute('data-category');
+        const target = item.getAttribute('data-target');
         
-        if (index < 3) {
+        if (target === 'about') {
+            // Scroll to about section
+            document.querySelector('#about').scrollIntoView({ behavior: 'smooth' });
+        } else if (category) {
             // Trigger category filter
-            const targetTab = document.querySelector(`.tab[data-category="${categories[index]}"]`);
+            const targetTab = document.querySelector(`.tab[data-category="${category}"]`);
             if (targetTab) {
                 targetTab.click();
                 window.scrollTo({ top: document.querySelector('.work-section').offsetTop - 100, behavior: 'smooth' });
             }
-        } else {
-            // Scroll to about section
-            document.querySelector('#about').scrollIntoView({ behavior: 'smooth' });
         }
     });
 });
