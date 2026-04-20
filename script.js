@@ -1,12 +1,9 @@
-// Wait for DOM to be ready
+// Flip Text and Initial Setup
 document.addEventListener('DOMContentLoaded', function() {
-    
-    // Flip Text Animation
     const flipTextElement = document.getElementById('flipText');
     if (flipTextElement) {
         const words = ['Multimedia', 'Visual', 'Digital', 'Reporting', 'Data-Driven', 'Dynamic', 'Solutions'];
         let currentIndex = 0;
-
         function flipText() {
             currentIndex = (currentIndex + 1) % words.length;
             flipTextElement.style.animation = 'none';
@@ -18,13 +15,11 @@ document.addEventListener('DOMContentLoaded', function() {
         setInterval(flipText, 2500);
     }
 
-    // Show sidebar after 5 seconds
     setTimeout(() => {
         const sidebar = document.querySelector('.sidebar-nav');
         if (sidebar) sidebar.classList.add('visible');
     }, 5000);
 
-    // Impact Modals
     const impactButtons = document.querySelectorAll('.impact-btn');
     const modals = document.querySelectorAll('.impact-modal');
     const closeButtons = document.querySelectorAll('.modal-close');
@@ -67,7 +62,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Category Filtering
 const tabs = document.querySelectorAll('.tab');
 const projects = document.querySelectorAll('.project-card');
 const projectsGrid = document.querySelector('.projects-grid');
@@ -76,9 +70,7 @@ tabs.forEach(tab => {
     tab.addEventListener('click', () => {
         tabs.forEach(t => t.classList.remove('active'));
         tab.classList.add('active');
-
         const category = tab.getAttribute('data-category');
-
         if (category === 'all') {
             projectsGrid.classList.add('grid-view');
             projects.forEach(project => {
@@ -101,13 +93,11 @@ tabs.forEach(tab => {
     });
 });
 
-// Auto-trigger All Projects on load
 window.addEventListener('load', () => {
     const allTab = document.querySelector('.tab[data-category="all"]');
     if (allTab) setTimeout(() => allTab.click(), 200);
 });
 
-// Category link buttons
 document.addEventListener('click', (e) => {
     if (e.target.classList.contains('category-link')) {
         const category = e.target.getAttribute('data-category');
@@ -119,13 +109,11 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// Sidebar icons
 const sidebarIcons = document.querySelectorAll('.sidebar-icon');
 sidebarIcons.forEach(icon => {
     icon.addEventListener('click', () => {
         const category = icon.getAttribute('data-category');
         const target = icon.getAttribute('data-target');
-
         if (target === 'about') {
             document.querySelector('#about').scrollIntoView({ behavior: 'smooth' });
         } else if (category) {
@@ -140,13 +128,11 @@ sidebarIcons.forEach(icon => {
     });
 });
 
-// Mobile menu
 const mobileMenuItems = document.querySelectorAll('.menu-item');
 mobileMenuItems.forEach(item => {
     item.addEventListener('click', () => {
         const category = item.getAttribute('data-category');
         const target = item.getAttribute('data-target');
-        
         if (target === 'about') {
             document.querySelector('#about').scrollIntoView({ behavior: 'smooth' });
         } else if (category) {
@@ -159,7 +145,6 @@ mobileMenuItems.forEach(item => {
     });
 });
 
-// Copy to clipboard
 const copyButtons = document.querySelectorAll('.copy-btn');
 copyButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -171,7 +156,6 @@ copyButtons.forEach(button => {
     });
 });
 
-// Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -180,7 +164,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Parallax hero
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const hero = document.querySelector('.hero-content');
