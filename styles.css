@@ -831,7 +831,14 @@ footer {
     .hamburger {
         display: flex;
     }
+/* ADD THIS - Stack featured cards on mobile */
+    .projects-grid.grid-view {
+        grid-template-columns: 1fr !important;
+    }
 
+    .hero h1 {
+        font-size: 2rem;
+    }
     .hero h1 {
         font-size: 2rem;
     }
