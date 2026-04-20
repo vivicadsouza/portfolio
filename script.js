@@ -35,12 +35,6 @@ document.addEventListener('DOMContentLoaded', function() {
             sidebarNav.classList.add('visible');
         }
     }, 5000);
-
-    // Auto-trigger "All Projects" filter on page load
-    const allProjectsTab = document.querySelector('.tab[data-category="all"]');
-    if (allProjectsTab) {
-        setTimeout(() => allProjectsTab.click(), 100);
-    }
 });
 
 // Sidebar Navigation
@@ -218,6 +212,16 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.style.overflow = 'auto';
         }
     });
+});
+
+// Auto-trigger "All Projects" filter on page load - ADD IT HERE
+window.addEventListener('load', function() {
+    setTimeout(() => {
+        const allProjectsTab = document.querySelector('.tab[data-category="all"]');
+        if (allProjectsTab) {
+            allProjectsTab.click();
+        }
+    }, 500);
 });
 
 console.log('Portfolio loaded!');
