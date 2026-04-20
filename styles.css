@@ -844,6 +844,15 @@ footer {
     .projects-grid {
         grid-template-columns: 1fr;
     }
+    /* Video embeds on mobile */
+.video-embed {
+    min-height: 250px;
+    height: 250px;
+}
+
+.video-embed iframe {
+    position: relative;
+}
 /* ADD THESE NEW MOBILE STYLES */
     /* Stack project cards vertically on mobile */
     .project-card {
@@ -864,10 +873,6 @@ footer {
     /* Remove right-align on mobile */
     .project-card.right-align {
         direction: ltr;
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr;
     }
 
     /* Hide sidebar on mobile, show bottom menu instead */
@@ -1115,7 +1120,7 @@ footer {
     margin-bottom: 0.5rem;
 }
 
-* Links inside modal body */
+/* Links inside modal body */
 .modal-body a {
     color: #6366f1;
     text-decoration: none;
@@ -1151,18 +1156,6 @@ footer {
 .project-card.right-align .project-links {
     justify-content: flex-start;
 }
-
-/* Mobile modal adjustments */
-@media (max-width: 768px) {
-    .modal-content {
-        padding: 2rem 1.5rem;
-        margin: 1rem;
-    }
-    
-    .modal-content h2 {
-        font-size: 1.5rem;
-    }
-
 /* Featured Cards Grid Layout - Only for "All Projects" view */
 .project-card.featured {
     display: flex;
@@ -1206,6 +1199,17 @@ footer {
     grid-template-columns: 1fr;
 }
 
+/* Mobile modal adjustments */
+@media (max-width: 768px) {
+    .modal-content {
+        padding: 2rem 1.5rem;
+        margin: 1rem;
+    }
+    
+    .modal-content h2 {
+        font-size: 1.5rem;
+    }
+}
 /* Keyboard Accessibility - Focus States */
 button:focus,
 a:focus,
@@ -1237,6 +1241,4 @@ a:focus,
 
 .skip-to-main:focus {
     top: 0;
-}
-
 }
