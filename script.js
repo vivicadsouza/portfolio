@@ -19,6 +19,37 @@ document.addEventListener('DOMContentLoaded', function() {
         const sidebar = document.querySelector('.sidebar-nav');
         if (sidebar) sidebar.classList.add('visible');
     }, 5000);
+// Category Filtering
+const tabs = document.querySelectorAll('.tab');
+const projects = document.querySelectorAll('.project-card');
+const projectsGrid = document.querySelector('.projects-grid');
+
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const category = tab.getAttribute('data-category');
+        if (category === 'all') {
+            projectsGrid.classList.add('grid-view');
+            projects.forEach(project => {
+                if (project.classList.contains('featured')) {
+                    project.classList.remove('hidden');
+                } else {
+                    project.classList.add('hidden');
+                }
+            });
+        } else {
+            projectsGrid.classList.remove('grid-view');
+            projects.forEach(project => {
+                if (project.classList.contains(category)) {
+                    project.classList.remove('hidden');
+                } else {
+                    project.classList.add('hidden');
+                }
+            });
+        }
+    });
+});
 
     const impactButtons = document.querySelectorAll('.impact-btn');
     const modals = document.querySelectorAll('.impact-modal');
@@ -58,37 +89,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (e.key === 'Escape') {
             modals.forEach(modal => modal.classList.remove('active'));
             document.body.style.overflow = 'auto';
-        }
-    });
-});
-
-const tabs = document.querySelectorAll('.tab');
-const projects = document.querySelectorAll('.project-card');
-const projectsGrid = document.querySelector('.projects-grid');
-
-tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        const category = tab.getAttribute('data-category');
-        if (category === 'all') {
-            projectsGrid.classList.add('grid-view');
-            projects.forEach(project => {
-                if (project.classList.contains('featured')) {
-                    project.classList.remove('hidden');
-                } else {
-                    project.classList.add('hidden');
-                }
-            });
-        } else {
-            projectsGrid.classList.remove('grid-view');
-            projects.forEach(project => {
-                if (project.classList.contains(category)) {
-                    project.classList.remove('hidden');
-                } else {
-                    project.classList.add('hidden');
-                }
-            });
         }
     });
 });
