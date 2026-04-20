@@ -1156,49 +1156,37 @@ footer {
 .project-card.right-align .project-links {
     justify-content: flex-start;
 }
-/* Featured Cards Grid Layout - Only for "All Projects" view */
-.project-card.featured {
+/* Grid view for "All Projects" - 2x2 grid */
+.projects-grid.grid-view {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+ 
+.projects-grid.grid-view .project-card {
+    grid-template-columns: 1fr;
     display: flex;
     flex-direction: column;
-    min-height: auto;
 }
-
-.project-card.featured .project-image {
-    min-height: 250px;
-    height: 250px;
+ 
+.projects-grid.grid-view .project-card .project-image {
+    height: 300px;
 }
-
-.project-card.featured .project-info {
+ 
+.projects-grid.grid-view .project-card .project-info {
     padding: 1.5rem;
     text-align: center;
 }
-
-.project-card.featured .project-info h3 {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-}
-
-.project-card.featured .project-description,
-.project-card.featured .tags,
-.project-card.featured .impact-btn {
+ 
+.projects-grid.grid-view .project-card .project-description,
+.projects-grid.grid-view .project-card .tags,
+.projects-grid.grid-view .project-card .impact-btn {
     display: none;
 }
-
-.project-card.featured .project-links {
+ 
+.projects-grid.grid-view .project-card .project-links {
     justify-content: center;
 }
-
-/* Show grid layout when "All Projects" is active */
-.projects-grid.grid-view {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.projects-grid.grid-view .project-card {
-    grid-template-columns: 1fr;
-}
-
 /* Mobile modal adjustments */
 @media (max-width: 768px) {
     .modal-content {
