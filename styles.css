@@ -237,6 +237,9 @@ html {
     font-weight: 600;
     transition: var(--transition);
     border-radius: 25px;
+    pointer-events: auto; /* ADD THIS */
+    position: relative; /* ADD THIS */
+    z-index: 1000; /* ADD THIS - very high */
 }
 
 .tab:hover,
