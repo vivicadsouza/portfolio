@@ -138,11 +138,11 @@ tabs.forEach(tab => {
     });
 });
 
-// Auto-trigger "Strategy" filter on page load
+// Auto-trigger "Reporting" filter on page load
 document.addEventListener('DOMContentLoaded', function() {
-    const strategyTab = document.querySelector('.tab[data-category="strategy"]');
-    if (strategyTab) {
-        strategyTab.click();
+    const reportingTab = document.querySelector('.tab[data-category="reporting"]');
+    if (reportingTab) {
+        reportingTab.click();
     }
 });
 
