@@ -140,10 +140,10 @@ tabs.forEach(tab => {
 
 // Auto-trigger "AI+Research" filter on page load
 document.addEventListener('DOMContentLoaded', function() {
-    const airesearchTab = document.querySelector('.tab[data-category="ai-research"]');
-    if (aiResearchTab) {
-        aiResearchTab.click();
-    }
+    const aiResearchTab = document.querySelector('.tab[data-category="ai-research"]');
+if (aiResearchTab) {
+    aiResearchTab.click();
+}
 });
 
 // "Check Other Work Here" button functionality
