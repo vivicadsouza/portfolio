@@ -140,7 +140,7 @@ tabs.forEach(tab => {
 
 // Auto-trigger "AI+Research" filter on page load
 document.addEventListener('DOMContentLoaded', function() {
-    const reportingTab = document.querySelector('.tab[data-category="ai-research"]');
+    const ai-researchTab = document.querySelector('.tab[data-category="ai-research"]');
     if (aiResearchTab) {
         aiResearchTab.click();
     }
