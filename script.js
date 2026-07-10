@@ -138,9 +138,9 @@ tabs.forEach(tab => {
     });
 });
 
-// Auto-trigger "Reporting" filter on page load
+// Auto-trigger "AI+Research" filter on page load
 document.addEventListener('DOMContentLoaded', function() {
-    const reportingTab = document.querySelector('.tab[data-category="reporting"]');
+    const reportingTab = document.querySelector('.tab[data-category="ai-research"]');
     if (reportingTab) {
         reportingTab.click();
     }
